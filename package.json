@@ -10,7 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "element-ui": "^2.0.9",
+    "axios": "^0.17.1",
+    "bootstrap-vue": "^2.0.0-rc.1",
+    "element-ui": "^2.1.0",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -62,5 +64,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "git@github.com:lllllllqw/lllllllqw.github.io.git",
+  "license": "MIT"
 }

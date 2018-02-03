@@ -3,17 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import DmsPaging from 'dms-paging'
-import epcComps from './assets/epcComps'
-import ElemetUI from 'element-ui'
 import store from './store'
-import 'element-ui/lib/theme-chalk/index.css'
+import BootstrapVue from 'bootstrap-vue'
+import axios from 'axios'
 
-Vue.use(ElemetUI)
-Vue.use(epcComps)
-
-// Vue.use(DmsPaging)
-// Vue.component("dms-paging", DmsPaging)
+Vue.prototype.$axios = axios
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
