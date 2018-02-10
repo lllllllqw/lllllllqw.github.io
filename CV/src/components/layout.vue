@@ -5,22 +5,15 @@
 </template>
 
 <script>
+import msg from '../../static/me.js'
+
   export default {
     data() {
       return {
-        msg: ''
+        msg: ""
       }
     },
     methods: {
-      getSelfIntroduce() {
-        this.$axios.get('../../static/me.txt')
-          .then(res => {
-            this.writeMsg(res.data)
-          })
-          .catch(e => {
-            console.log(e)
-          })
-      },
       writeMsg(msg) {
         let i = 0
         let interval
@@ -30,7 +23,7 @@
           i++
           this.msg += char
           if (char == '\n') {
-            console.log(i,char)
+            console.log(i, char)
           }
           if (i >= msg.length) {
             clearInterval(interval)
@@ -39,7 +32,7 @@
       }
     },
     mounted() {
-      this.getSelfIntroduce()
+      this.writeMsg(msg)
     }
   }
 
