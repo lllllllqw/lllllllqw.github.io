@@ -1,8 +1,8 @@
+// 结论: 不要用for in, 普通for循环其实效率最高
 var arr = []
 for(let i = 0; i <= 1000000; i++) {
   arr[i] = 1
 }
-
 // for loop测试
 console.time('for');
 var sum = 0;
