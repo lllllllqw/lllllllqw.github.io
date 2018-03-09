@@ -32,5 +32,13 @@ window.onload = () => {
     }
   }
 
-  setByDelegate()
+  let now = 3
+  document.querySelector('button').onclick = () => {
+    let oUl = document.querySelector('#ul')
+    let oLi = document.createElement('li')
+    oLi.innerHTML = ++now
+    oUl.appendChild(oLi)
+  }
+  
+  setByDirect()
 }
