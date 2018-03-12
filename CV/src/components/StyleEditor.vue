@@ -1,10 +1,12 @@
 <template>
   <div class="style-editor-container">
-    <pre v-html="code"></pre>
+    <div class="code" v-html="codeInStyleTag"></div>
+    <pre v-html="highlightedCode"></pre>
   </div>
 </template>
 
 <script>
+import Prismjs from 'prismjs'
 export default {
   name: 'style-editor',
   props: {
@@ -13,6 +15,21 @@ export default {
       required: true,
       default: ''
     }
+  },
+  computed: {
+    highlightedCode: function () {
+      return Prismjs.highlight(this.code, Prismjs.languages.css)
+    },
+    codeInStyleTag: function () {
+      return `<style>${this.code}</style>`
+    }
   }
 }
 </script>
+
+<style lang="scss">
+  .code {
+    display: none;
+  }
+</style>
+

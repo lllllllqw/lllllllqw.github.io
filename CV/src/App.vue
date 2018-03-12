@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <style-editor :code="styleMsg"></style-editor>
-    <cv-editor :markdown="markdownMsg"></cv-editor>
+    <style-editor ref="styleEditor" :code="styleMsg"></style-editor>
+    <cv-editor ref="cvEditor" :markdown="markdownMsg" :enableHtml="enableHtml"></cv-editor>
   </div>
 </template>
 
 <script>
-  import {me as fullMsg, fullMarkdown} from '../static/me.js'
+  import {
+    me as fullMsg,
+    fullMarkdown
+  } from '../static/me.js'
   import StyleEditor from './components/StyleEditor.vue'
   import CvEditor from './components/CvEditor.vue'
 
@@ -20,10 +23,16 @@
       return {
         styleMsg: "",
         markdownMsg: "",
+        enableHtml: false,
         interval: 50
       }
     },
     methods: {
+      startWriting:async function () {
+        await this.progressivelyShowStyle(0)
+        this.progressivelyShowResume()
+        this.enableHtml = true
+      },
       progressivelyShowStyle: function (n) {
         return new Promise((resolve, reject) => {
           let {
@@ -44,20 +53,19 @@
             }, 0)
             // 获取0 - (n -1)组字符串长度
             let prefixLength = allLength - nStyle.length
-            if(this.styleMsg.length < allLength) {
+            if (this.styleMsg.length < allLength) {
               // 当前n组已经打出长度
               let l = this.styleMsg.length - prefixLength
               let char = nStyle.substring(l, l + 1) || ' '
               this.styleMsg += char
               // 如果出现换行符,去底部
-              if(nStyle.substring(l-1, l) === '\n' && this.$refs.styleEditor) {
+              if (nStyle.substring(l - 1, l) === '\n' && this.$refs.styleEditor) {
                 this.$nextTick(() => {
                   // this.$refs.styleEditor.goBottom()
                 })
               }
-              setTimeout( showStyle, interval)
-            }
-            else {
+              setTimeout(showStyle, interval)
+            } else {
               resolve()
             }
           }).bind(this)
@@ -67,19 +75,21 @@
       progressivelyShowResume() {
         return new Promise((resolve, reject) => {
           let length = fullMarkdown.length
-          let { interval } = this
+          let {
+            interval
+          } = this
           let showResume = () => {
             if (this.markdownMsg.length < length) {
               this.markdownMsg = fullMarkdown.substring(0, this.markdownMsg.length + 1)
               let lastChar = this.markdownMsg[this.markdownMsg.length - 1]
               let prevChar = this.markdownMsg[this.markdownMsg.length - 2]
-              if(prevChar === '\n' && this.$refs.resumeEditor) {
+              if (prevChar === '\n' && this.$refs.cvEditor) {
                 this.$nextTick(() => {
-                  // this.$refs.resumeEditor.goBottom()
+                  // this.$refs.cvEditor.goBottom()
                 })
               }
               setTimeout(showResume, interval)
-            }else {
+            } else {
               resolve()
             }
           }
@@ -88,8 +98,7 @@
       }
     },
     mounted() {
-      this.progressivelyShowStyle(0)
-      this.progressivelyShowResume()
+      this.startWriting()
     }
   }
 

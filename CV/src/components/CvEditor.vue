@@ -12,6 +12,11 @@ export default {
       type: String,
       reqiored: true,
       default: ''
+    },
+    enableHtml: {
+      type: Boolean,
+      reqiored: true,
+      default: false
     }
   }
 }
