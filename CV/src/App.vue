@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <style-editor :code="styleMsg"></style-editor>
-    <cv-editor></cv-editor>
+    <cv-editor :markdown="markdownMsg"></cv-editor>
   </div>
 </template>
 
 <script>
-  import fullMsg from '../static/me.js'
+  import {me as fullMsg, fullMarkdown} from '../static/me.js'
   import StyleEditor from './components/StyleEditor.vue'
   import CvEditor from './components/CvEditor.vue'
 
@@ -19,6 +19,7 @@
     data() {
       return {
         styleMsg: "",
+        markdownMsg: "",
         interval: 50
       }
     },
@@ -62,10 +63,33 @@
           }).bind(this)
           showStyle()
         })
+      },
+      progressivelyShowResume() {
+        return new Promise((resolve, reject) => {
+          let length = fullMarkdown.length
+          let { interval } = this
+          let showResume = () => {
+            if (this.markdownMsg.length < length) {
+              this.markdownMsg = fullMarkdown.substring(0, this.markdownMsg.length + 1)
+              let lastChar = this.markdownMsg[this.markdownMsg.length - 1]
+              let prevChar = this.markdownMsg[this.markdownMsg.length - 2]
+              if(prevChar === '\n' && this.$refs.resumeEditor) {
+                this.$nextTick(() => {
+                  // this.$refs.resumeEditor.goBottom()
+                })
+              }
+              setTimeout(showResume, interval)
+            }else {
+              resolve()
+            }
+          }
+          showResume()
+        })
       }
     },
     mounted() {
       this.progressivelyShowStyle(0)
+      this.progressivelyShowResume()
     }
   }
 

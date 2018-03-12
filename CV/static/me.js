@@ -1,4 +1,4 @@
-const ME = [`知道我是谁吗？
+export const me = [`知道我是谁吗？
 等等等~
 我这就告诉你！
 ···················
@@ -10,4 +10,4 @@ const ME = [`知道我是谁吗？
 我就是萌新前端攻城狮lqw啦！
 (*^▽^*)`]
 
-export default ME
+export const fullMarkdown = `这是markdown语法`
