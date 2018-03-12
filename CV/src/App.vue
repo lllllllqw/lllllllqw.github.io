@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <style-editor :code="msg"></style-editor>
+    <style-editor :code="styleMsg"></style-editor>
     <cv-editor></cv-editor>
   </div>
 </template>
 
 <script>
-  import msg from '../static/me.js'
+  import fullMsg from '../static/me.js'
   import StyleEditor from './components/StyleEditor.vue'
   import CvEditor from './components/CvEditor.vue'
 
@@ -18,29 +18,54 @@
     },
     data() {
       return {
-        msg: ""
+        styleMsg: "",
+        interval: 50
       }
     },
     methods: {
-      writeMsg(msg) {
-        let i = 0
-        let interval
-        let char
-        interval = setInterval(() => {
-          char = msg.substring(i, i + 1)
-          i++
-          this.msg += char
-          if (char == '\n') {
-            console.log(i, char)
-          }
-          if (i >= msg.length) {
-            clearInterval(interval)
-          }
-        }, 50)
+      progressivelyShowStyle: function (n) {
+        return new Promise((resolve, reject) => {
+          let {
+            interval
+          } = this
+          let showStyle = (async function () {
+            let nStyle = fullMsg[n]
+            if (!nStyle) {
+              return
+            }
+            // 计算0 - n组字符总数
+            let allLength = fullMsg.filter((val, index) => {
+              return index <= n
+            }).map(item => {
+              return item.length
+            }).reduce((all, now) => {
+              return all + now
+            }, 0)
+            // 获取0 - (n -1)组字符串长度
+            let prefixLength = allLength - nStyle.length
+            if(this.styleMsg.length < allLength) {
+              // 当前n组已经打出长度
+              let l = this.styleMsg.length - prefixLength
+              let char = nStyle.substring(l, l + 1) || ' '
+              this.styleMsg += char
+              // 如果出现换行符,去底部
+              if(nStyle.substring(l-1, l) === '\n' && this.$refs.styleEditor) {
+                this.$nextTick(() => {
+                  // this.$refs.styleEditor.goBottom()
+                })
+              }
+              setTimeout( showStyle, interval)
+            }
+            else {
+              resolve()
+            }
+          }).bind(this)
+          showStyle()
+        })
       }
     },
     mounted() {
-      this.writeMsg(msg)
+      this.progressivelyShowStyle(0)
     }
   }
 
@@ -58,4 +83,5 @@
     margin: 0;
     padding: 0;
   }
+
 </style>
