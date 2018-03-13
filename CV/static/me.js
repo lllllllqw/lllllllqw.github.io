@@ -1,22 +1,33 @@
 export const me = [`
 /*
 * 知道我是谁吗？
-* 等等等~
-* 我这就告诉你！
-* ···················
-* 再多等一会吧~
-* ···················
-* 喝杯水~
-* 转两圈~
-* 活动活动~
 * 我就是萌新前端攻城狮lqw啦！
-* (*^▽^*) 
+* (*^▽^*)
+* 页面是不是太单调了~
+* 那么我们来美化一下吧
 */
-/* 加上样式 */
-html {
-  background: #ccc;
+/* 首先加上过渡效果 */
+* {
+  transition: all 0.5s;
 }
-/* 代码高亮 */
+/* 然后加上背景色~ */
+html {
+  background: #002b36;
+}
+/* 有点看不清字了,那我们换个颜色 */
+html {
+  color: #eee;
+}
+/* 字太挤了,换一下 */
+.style-editor-container {
+  border: 1px solid #ccc;
+  overflow: auto;
+  width: 45vw;
+  height: 80vh;
+  padding: 1em;
+  margin: 1em;
+}
+/* 代码是不是 */
 .token.selector{ color: rgb(133,153,0); }
 .token.property{ color: rgb(187,137,0); }
 .token.punctuation{ color: yellow; }

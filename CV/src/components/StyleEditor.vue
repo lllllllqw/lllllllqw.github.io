@@ -1,7 +1,7 @@
 <template>
-  <div class="style-editor-container">
-    <div class="code" v-html="codeInStyleTag"></div>
+  <div class="style-editor-container" ref="container">
     <pre v-html="highlightedCode"></pre>
+    <div class="code" v-html="codeInStyleTag"></div>
   </div>
 </template>
 
@@ -22,6 +22,11 @@ export default {
     },
     codeInStyleTag: function () {
       return `<style>${this.code}</style>`
+    }
+  },
+  methods: {
+    goBottom() {
+      this.$refs.container.scrollTop = 100000
     }
   }
 }

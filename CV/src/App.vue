@@ -61,7 +61,7 @@
               // 如果出现换行符,去底部
               if (nStyle.substring(l - 1, l) === '\n' && this.$refs.styleEditor) {
                 this.$nextTick(() => {
-                  // this.$refs.styleEditor.goBottom()
+                  this.$refs.styleEditor.goBottom()
                 })
               }
               setTimeout(showStyle, interval)
