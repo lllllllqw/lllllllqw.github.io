@@ -5,7 +5,13 @@
   "tasks": [
     {
       "type": "npm",
-      "script": "dev",
+      "script": "serve",
+      "path": "CV/",
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "build",
       "path": "CV/",
       "problemMatcher": []
     }
