@@ -9,7 +9,7 @@
   import {
     me as fullMsg,
     fullMarkdown
-  } from '../static/me.js'
+  } from '../public/me.js'
   import StyleEditor from './components/StyleEditor.vue'
   import CvEditor from './components/CvEditor.vue'
 
