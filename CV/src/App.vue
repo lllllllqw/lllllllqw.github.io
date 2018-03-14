@@ -24,13 +24,14 @@
         styleMsg: "",
         markdownMsg: "",
         enableHtml: false,
-        interval: 50
+        interval: 30
       }
     },
     methods: {
       startWriting:async function () {
         await this.progressivelyShowStyle(0)
-        this.progressivelyShowResume()
+        await this.progressivelyShowResume()
+        await this.progressivelyShowStyle(1)
         this.enableHtml = true
       },
       progressivelyShowStyle: function (n) {
@@ -84,9 +85,7 @@
               let lastChar = this.markdownMsg[this.markdownMsg.length - 1]
               let prevChar = this.markdownMsg[this.markdownMsg.length - 2]
               if (prevChar === '\n' && this.$refs.cvEditor) {
-                this.$nextTick(() => {
-                  // this.$refs.cvEditor.goBottom()
-                })
+                this.$nextTick(() => this.$refs.cvEditor.goBottom())
               }
               setTimeout(showResume, interval)
             } else {
