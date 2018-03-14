@@ -1,6 +1,6 @@
-# myproject
+# CV
 
-> A Vue.js project
+> This is my resume
 
 ## Build Setup
 
@@ -18,4 +18,4 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+reference: [一个会动的简历模板](https://github.com/jirengu-inc/animating-resume)
