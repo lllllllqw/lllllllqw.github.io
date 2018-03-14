@@ -23,6 +23,11 @@ export default new Router({
       name: 'Layout',
       component: Home
     },
+    {
+      path: '/user/:user',
+      name: 'User',
+      component: About
+    },
     ...lazyRoutes
   ]
 })
