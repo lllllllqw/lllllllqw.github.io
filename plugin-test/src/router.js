@@ -24,10 +24,17 @@ export default new Router({
       component: Home
     },
     {
-      path: '/user/:user',
-      name: 'User',
-      component: About
+      path: '/404',
+      name: '404',
+      component: _import('404')
     },
-    ...lazyRoutes
-  ]
+    ...lazyRoutes,
+    {
+      path: '*',
+      redirect: '/404'
+    }
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })

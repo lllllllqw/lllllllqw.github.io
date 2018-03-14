@@ -20,6 +20,12 @@
       "script": "serve",
       "path": "plugin-test/",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "path": "plugin-test/",
+      "problemMatcher": []
     }
   ]
 }
