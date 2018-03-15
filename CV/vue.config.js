@@ -1,6 +1,6 @@
 module.exports = {
   lintOnSave: false,
-  baseUrl: '/CV',
+  baseUrl: '/CV/dist',
   devServer: {
     port: 5792
   }
