@@ -19,15 +19,20 @@ forLoopSleep(1000)
 console.timeEnd('promiseSleep')
 
 
-// function sleep(delay) {
-//   return new Promise(reslove => {
-//     setTimeout(reslove, delay)
-//   })
-// }
+// 3.async/await版
 
-// (async function test() {
-//   const t1 = +new Date()
-//   await sleep(1000)
-//   const t2 = +new Date()
-//   console.log(t2 - t1)
-// })()
+function asyncSleep(sleepTime) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve()
+    }, 1000)
+  }) 
+}
+
+async function startAsyncSleep(sleepTime) {
+  console.time('asyncSleep')
+  await asyncSleep(sleepTime)
+  console.timeEnd('asyncSleep')
+}
+
+startAsyncSleep()
