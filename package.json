@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "marked": "^0.3.17"
+    "cheerio": "^1.0.0-rc.2",
+    "marked": "^0.3.17",
+    "superagent": "^3.8.2"
   }
 }
