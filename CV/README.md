@@ -18,4 +18,4 @@ npm run build
 npm run build --report
 ```
 
-reference: [一个会动的简历模板](https://github.com/jirengu-inc/animating-resume)
+<span style="font-size: 0.8em;">reference: [一个会动的简历模板](https://github.com/jirengu-inc/animating-resume)</span>
