@@ -7,15 +7,25 @@
 
 <script>
   import axios from 'axios'
-  import {session,cookie} from '../utils/store'
+  import {
+    local,
+    cookie
+  } from '../utils/store'
   export default {
     name: 'home',
     components: {},
     mounted() {
-      cookie.set('user', 'lqw', 9999999)
-      setTimeout(() => {
-        console.log(cookie.get('user'))
-      }, 1000)
+      cookie.set('user', {
+        name: 'lqw',
+        job: 'FE'
+      }, 1000, '/')
+      console.log(cookie.get('user'))
+      console.log(cookie.has('user'))
+      cookie.clear()
+      console.log(cookie.get('user'))
+      console.log(cookie.has('user'))
+      
+      local.set('lqw', {name: 'lqw', job: 'FE'})
       const getUser = () => {
         return this.$fetch.get('/mock')
       }
