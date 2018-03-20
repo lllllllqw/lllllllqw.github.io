@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"30-seconds-of-code@^0.0.2":
+  version "0.0.2"
+  resolved "http://registry.npm.taobao.org/30-seconds-of-code/download/30-seconds-of-code-0.0.2.tgz#25dba44774c171bc004fbb09e585f096717a0b55"
+
 "@types/node@*":
   version "9.4.7"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-9.4.7.tgz#57d81cd98719df2c9de118f2d5f3b1120dcd7275"
@@ -140,6 +144,10 @@ isarray@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/isarray/download/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
+js-cookie@^2.2.0:
+  version "2.2.0"
+  resolved "http://registry.npm.taobao.org/js-cookie/download/js-cookie-2.2.0.tgz#1b2c279a6eece380a12168b92485265b35b1effb"
+
 lodash@^4.15.0:
   version "4.17.5"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
@@ -205,6 +213,10 @@ readable-stream@^2.0.2, readable-stream@^2.0.5:
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "http://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
+
+store@^2.0.12:
+  version "2.0.12"
+  resolved "http://registry.npm.taobao.org/store/download/store-2.0.12.tgz#8c534e2a0b831f72b75fc5f1119857c44ef5d593"
 
 string_decoder@~1.0.3:
   version "1.0.3"

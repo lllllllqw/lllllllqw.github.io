@@ -6,16 +6,19 @@
 </template>
 
 <script>
-  // @ is an alias to /src
   import axios from 'axios'
+  import {session,cookie} from '../utils/store'
   export default {
     name: 'home',
     components: {},
     mounted() {
+      cookie.set('user', 'lqw', 9999999)
+      setTimeout(() => {
+        console.log(cookie.get('user'))
+      }, 1000)
       const getUser = () => {
         return this.$fetch.get('/mock')
       }
-
       const getTimestamp = () => {
         return this.$fetch.get('/mock/timestamp')
       }

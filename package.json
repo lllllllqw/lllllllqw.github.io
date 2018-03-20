@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "30-seconds-of-code": "^0.0.2",
     "cheerio": "^1.0.0-rc.2",
+    "js-cookie": "^2.2.0",
     "marked": "^0.3.17",
+    "store": "^2.0.12",
     "superagent": "^3.8.2"
   }
 }

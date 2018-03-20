@@ -6,11 +6,11 @@ import _import from './utils/_import'
 
 Vue.use(Router)
 
-const nameList = [ 'About']
+const nameList = [ 'About', '30SecondsOfCode']
 
 const lazyRoutes = nameList.map(val => {
   return {
-    path: ('/' + val),
+    path: ('/' + val.replace(/-/g, '')),
     name: val,
     component: _import(val)
   }
