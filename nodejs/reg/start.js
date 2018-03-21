@@ -1,4 +1,7 @@
 // 全忘了,从零开始正则表达式
+// 参照:http://www.jb51.net/article/77687.htm
+
+const log = console.log.bind(console)
 
 // 判读是否全是数字
 function isAllNumber(str) {
@@ -15,4 +18,27 @@ function findFirstStr(str, param) {
   return param.search(reg)
 }
 
-console.log(findFirstStr('332', '1233241a'))
+const numberReg = {
+  findLengthN: function(n) {
+    // /^\d{n}$/
+    // 匹配长度为n的字符串
+    return new RegExp(`^\\d{${n}}$`)
+  },
+  findLessLengthN: function(n) {
+    // /^\d{n,}$/
+    // 匹配长度至少为n的字符串
+    return new RegExp(`^\\d{${n},}$`)
+  },
+  findLengthMtoN: function(m, n) {
+    // /^\d{m,n}$/
+    // 匹配长度至少为m到n的字符串
+    return new RegExp(`^\\d{${m},${n}}$`)
+  },
+  findBinary: function() {
+    return new RegExp("^[0-1]*$")
+  }
+}
+
+log(numberReg.findBinary().test('13423'))
+log(numberReg.findBinary().test('0111'))
+log(numberReg.findBinary().test(''))
