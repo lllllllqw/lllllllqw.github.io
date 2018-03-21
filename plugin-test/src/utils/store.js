@@ -103,6 +103,7 @@ const hasCookie = (key) => getCookie(key) !== null
  * @param  {String} domain 所访问网站的域名
  * @param  {Number} maxAge 有效时长(秒)
  * @param  {Any} secure 设置传输过程是否加密
+ * @author  lqw
  */
 const setCookie = (key, value, expires, path, domain, maxAge, secure) => {
   let cookie = `${key}=${encodeURI(JSON.stringify(value))}${expires ? `; expires=${new Date(+new Date() + expires * 1000).toUTCString()}` : ''}${path ? `; path=${path}` : ''}${domain ? `;domain=${domain}` : ''}${maxAge ? `;max-age=${maxAge}` : ''}${secure ? `;secure=${secure}` : ''}`
