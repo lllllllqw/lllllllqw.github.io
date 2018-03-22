@@ -33,12 +33,9 @@ const numberReg = {
     // /^\d{m,n}$/
     // 匹配长度至少为m到n的字符串
     return new RegExp(`^\\d{${m},${n}}$`)
-  },
-  findBinary: function() {
-    return new RegExp("^[0-1]*$")
   }
 }
 
-log(numberReg.findBinary().test('13423'))
-log(numberReg.findBinary().test('0111'))
-log(numberReg.findBinary().test(''))
+// log(numberReg.findBinary().test('13423'))
+// log(numberReg.findBinary().test('0111'))
+// log(numberReg.findBinary().test(''))
