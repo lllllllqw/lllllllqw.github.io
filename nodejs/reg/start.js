@@ -33,6 +33,9 @@ const numberReg = {
     // /^\d{m,n}$/
     // 匹配长度至少为m到n的字符串
     return new RegExp(`^\\d{${m},${n}}$`)
+  },
+  find0Or1First: function() {
+    // 找到0跟1开头的数字
   }
 }
 
