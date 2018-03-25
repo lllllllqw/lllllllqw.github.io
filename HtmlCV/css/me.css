@@ -1,0 +1,124 @@
+		*{
+			padding: 0;
+			margin: 0;
+			font-family: "微软雅黑";
+			box-sizing: border-box;
+		}
+		#wrap {
+			width: 1000px;
+			margin: 0 auto;
+		}
+		
+		#left_content {
+			width: 300px;
+			height: 1080px;
+			background-color: rgb(231, 231, 231);
+			float: left;
+		}
+		
+		#right_content {
+			padding:70px 50px 50px 50px;
+			width: 600px;
+			height: 1080px;
+			background-color: rgb(245, 245, 245);
+			float: left;
+		}
+		
+		#photo {
+			width: 200px;
+			height: 200px;
+			margin: 100px 50px 50px 50px;
+			border: 1px solid #000;
+		}
+		
+		#name_part{
+			text-align: center;
+			background-color: rgb(70,90,128);
+			color: #FFF;
+		}
+		
+		.name{
+			padding-top: 10px;
+			padding-bottom: 5px;
+			font-size: 32px;
+			font-weight: bold;
+		}
+		
+		.job{
+			padding-bottom: 10px;
+			font-size: 20px;
+		}
+		
+		#left_content>ol{
+			margin-top: 50px;
+			margin-left: 50px;
+			list-style: none;
+		}
+		
+		#left_content>ol li{
+			margin-top: 20px;
+		}
+		
+		#left_content>hr{
+			margin-top: 50px;
+			margin-left: 20%;
+			width: 60%;
+			height: 3px;
+			border-color: #000;
+			background-color: #000;
+		}
+		
+		.honor_text{
+			width: 120px;
+			margin-top: 50px;
+			margin-left: 100px;
+			text-align: center;
+			border: 2px solid rgb(70,90,128);
+		}
+		
+		.honor_list{
+			margin-top: 30px;
+			margin-left: 64px;
+			list-style: square;
+		}
+		
+		.honor_list li{
+			margin-top: 10px;
+		}
+		
+		#right_content>div>:first-child{
+			margin-top: 30px;
+			font-size: 24px;
+			font-weight: bold;
+			color: rgb(70,90,128);
+		}
+		
+		ul.lists{
+			margin-left: 20px;
+		}
+		
+		p.school{
+			margin-top: 20px;
+			color: rgb(70,90,128);
+		}
+		
+		span.project-name{
+			color:#000;
+		}
+
+		span.project-function{
+			color: green;
+		}
+
+		ul.lists li{
+			padding-top: 10px;
+		}
+		
+		ul.lists>li span{
+			font-weight: bold;
+			color: rgb(70,90,128);
+		}
+		
+		p.self_assessment{
+			margin-top: 20px;
+		}
