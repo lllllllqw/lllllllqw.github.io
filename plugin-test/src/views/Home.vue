@@ -2,10 +2,12 @@
   <div class="home">
     <img src="../assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <my-input v-model="defaultText"></my-input>
   </div>
 </template>
 
 <script>
+import MyInput from '../components/MyInput'
   import axios from 'axios'
   import {
     local,
@@ -13,8 +15,20 @@
   } from '../utils/store'
   export default {
     name: 'home',
-    components: {},
+    components: {
+      MyInput
+    },
+    data() {
+      return {
+        defaultText: "默认值"
+      }
+    },
+    methods: {
+    },
     mounted() {
+      setInterval(() => {
+        console.log(this.defaultText)
+      }, 500)
       cookie.set('user', {
         name: 'lqw',
         job: 'FE'
