@@ -3,6 +3,7 @@
     <img src="../assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <my-input v-model="defaultText"></my-input>
+    <my-input v-model="defaultText2"></my-input>
   </div>
 </template>
 
@@ -20,7 +21,8 @@ import MyInput from '../components/MyInput'
     },
     data() {
       return {
-        defaultText: "默认值"
+        defaultText: "默认值",
+        defaultText2: "默认值2"
       }
     },
     methods: {

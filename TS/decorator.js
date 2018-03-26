@@ -26,14 +26,29 @@ function classDecorator(constructor) {
         return class_1;
     }(constructor));
 }
+function functionDecorator(value) {
+    return function (target, propertyKey, descriptor) {
+        console.log(target);
+        console.log(propertyKey);
+        // 版本小于ES5，descriptor是undefined
+        // console.log(descriptor)
+        // descriptor.enumerable = false
+    };
+}
 var Greeter = /** @class */ (function () {
     function Greeter(m) {
         this.property = "property";
         this.hello = m;
     }
+    Greeter.prototype.greet = function () {
+        return console.log('hhhhhh');
+    };
+    __decorate([
+        functionDecorator('123')
+    ], Greeter.prototype, "greet");
     Greeter = __decorate([
         classDecorator
     ], Greeter);
     return Greeter;
 }());
-console.log(new Greeter("world").property);
+// console.log(new Greeter("world").property); 
