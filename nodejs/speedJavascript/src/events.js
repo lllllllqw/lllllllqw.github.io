@@ -1,3 +1,5 @@
+// 事件委托
+
 window.onload = () => {
   // 直接通过li元素设置事件绑定
   function setByDirect() {

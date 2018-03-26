@@ -1,3 +1,5 @@
+// js中可能存在 a == 1 && a == 2 & a == 3 为 true 的情况吗
+
 // 使用非全等判断时会先调用toString
 function palnOne() {
   let a = {
