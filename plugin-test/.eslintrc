@@ -3,5 +3,8 @@
   "extends": [
     "plugin:vue/essential",
     "eslint:recommended"
-  ]
+  ],
+  "rules": {
+    "no-use-before-define":"warn"
+  }
 }

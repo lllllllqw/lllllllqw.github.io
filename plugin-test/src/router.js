@@ -6,7 +6,7 @@ import _import from './utils/_import'
 
 Vue.use(Router)
 
-const nameList = [ 'About', '30SecondsOfCode']
+const nameList = [ 'About', '30SecondsOfCode', 'ElementEditTree']
 
 const lazyRoutes = nameList.map(val => {
   return {
