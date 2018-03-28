@@ -9,8 +9,8 @@
 </template>
 
 <script>
-  // import MyInput from '../components/MyInput'
-  import MyInput from '../components/MyInputOther.vue'
+  import MyInput from '../components/MyInput'
+  // import MyInput from '../components/MyInputOther.vue'
   export default {
     name: 'home',
     components: {

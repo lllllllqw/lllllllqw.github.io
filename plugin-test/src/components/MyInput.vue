@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" v-model="nowInput" @input="handleInput">
+    <input type="text" v-model="nowInput">
   </div>
 </template>
 
@@ -18,15 +18,22 @@ export default {
   },
   data() {
     return {
-      nowInput: this.defaultText
+      // nowInput: this.defaultText
+    }
+  },
+  computed: {
+    nowInput: {
+      get() {
+        return this.defaultText
+      },
+      set() {
+        this.handleInput()
+      }
     }
   },
   methods: {
     handleInput() {
       this.$emit('input', this.nowInput)
-    },
-    changeValue(value) {
-      this.nowInput = value
     }
   }
 }
