@@ -5,40 +5,30 @@
 </template>
 
 <script>
-export default {
-  model: {
-    prop: 'defaultText',
-    event: 'input'
-  },
-  props: {
-    defaultText: {
-      type: String,
-      default: ''
-    }
-  },
-  data() {
-    return {
-      // nowInput: this.defaultText
-    }
-  },
-  computed: {
-    nowInput: {
-      get() {
-        return this.defaultText
-      },
-      set() {
-        this.handleInput()
+  export default {
+    // 默认prop为value,event为input,此处为自定义
+    model: {
+      prop: 'defaultText',
+      event: 'input'
+    },
+    props: {
+      defaultText: {
+        type: String,
+        default: ''
+      }
+    },
+    computed: {
+      nowInput: {
+        get() {
+          return this.defaultText
+        },
+        set(newValue) {
+          this.$emit('input', newValue)
+        }
       }
     }
-  },
-  methods: {
-    handleInput() {
-      this.$emit('input', this.nowInput)
-    }
   }
-}
 </script>
 
 <style>
-
 </style>
