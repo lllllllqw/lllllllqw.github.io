@@ -5,7 +5,6 @@
 </template>
 
 <script>
-// 简单实现组件input跟父组件数据的双向绑定
 export default {
   model: {
     prop: 'defaultText',
@@ -25,6 +24,9 @@ export default {
   methods: {
     handleInput() {
       this.$emit('input', this.nowInput)
+    },
+    changeValue(value) {
+      this.nowInput = value
     }
   }
 }
