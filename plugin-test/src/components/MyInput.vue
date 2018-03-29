@@ -7,6 +7,7 @@
 <script>
   export default {
     // 默认prop为value,event为input,此处为自定义
+    // 使用checkbox之类可能需要占用value属性
     model: {
       prop: 'defaultText',
       event: 'input'
