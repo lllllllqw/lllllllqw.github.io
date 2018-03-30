@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/30SecondsOfCode">30SecondsOfCode</router-link>
       <router-link to="/AboutElement">AboutElement</router-link>
+      <router-link to="/Calender">日历</router-link>
     </div>
     <router-view/>
   </div>
@@ -15,16 +16,16 @@
 
   export default {
     mounted() {
-      const getUser = () => {
-        return this.$fetch.get('/mock')
-      }
-      const getTimestamp = () => {
-        return this.$fetch.get('/mock/timestamp')
-      }
-      axios.all([getUser(), getTimestamp()])
-        .then(axios.spread(function (acct, perms) {
-          console.log(acct, perms)
-        }))
+      // const getUser = () => {
+      //   return this.$fetch.get('/mock')
+      // }
+      // const getTimestamp = () => {
+      //   return this.$fetch.get('/mock/timestamp')
+      // }
+      // axios.all([getUser(), getTimestamp()])
+      //   .then(axios.spread(function (acct, perms) {
+      //     console.log(acct, perms)
+      //   }))
     }
   }
 </script>

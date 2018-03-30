@@ -1,0 +1,24 @@
+.month-name {
+  text-align: center;
+  line-height: 1.2em;
+}
+
+.month-wrapper {
+  float: left;
+  margin: 10px;
+  width: calc(100% / 3 - 20px);
+  height: 220px;
+  background: #ccc;
+  text-align: left;
+}
+
+.month-header .date-box {
+  font-weight: bold;
+}
+
+.date-box {
+  display: inline-block;
+  width: calc(100% / 7 - 4px);
+  margin: 2px;
+  text-align: center;
+}
