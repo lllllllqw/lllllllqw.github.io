@@ -1,3 +1,7 @@
+.calender-content {
+  user-select: none;
+}
+
 .month-name {
   text-align: center;
   line-height: 1.2em;
@@ -21,4 +25,8 @@
   width: calc(100% / 7 - 4px);
   margin: 2px;
   text-align: center;
+}
+
+.month-body .date-box:hover {
+  background: blanchedalmond;
 }

@@ -17,7 +17,7 @@
         <div class="month-body">
           <div class="date-box" v-for="index of month[0].day" :key="index"></div>
           <div class="date-box" :style="{color: day.isSelected ? 'red' : ''}" v-for="(day, dateIndex) of month" :key="day.timestamp"
-            @click="handleDateBoxClick(monthIndex, dateIndex)">{{day.date}}</div>
+            @click="handleDateBoxClick(monthIndex, dateIndex)" @mousedown="handleDateBoxMouseDown(monthIndex, dateIndex)" @mouseup="handleDateBoxMouseUp(monthIndex, dateIndex)">{{day.date}}</div>
         </div>
       </div>
     </div>
@@ -37,12 +37,17 @@
   export default {
     data() {
       return {
+        MONTH_NAMES,
+        DAY_NAMES,
         toolOptions: {
           year: 2018,
         },
+        isPressMove: false,
         monthDaysArr: [],
-        MONTH_NAMES,
-        DAY_NAMES
+        pressStart: {
+          monthIndex: 0,
+          dateIndex: 0
+        }
       }
     },
     computed: {
@@ -73,10 +78,42 @@
       handleDateBoxClick(monthIndex, dateIndex) {
         this.changeDateSelection(monthIndex, dateIndex)
       },
+      upEvent() {
+        console.log('window关闭')
+        this.isPressMove = false
+      },
+      handleDateBoxMouseDown(monthIndex, dateIndex) {
+        this.isPressMove = true
+        this.pressStart.monthIndex = monthIndex
+        this.pressStart.dateIndex = dateIndex
+      },
+      handleDateBoxMouseUp(monthIndex, dateIndex) {
+        if (this.isPressMove) {
+          let {pressStart, monthDaysArr} = this
+          // 如果往前选,交换index
+          if(monthIndex < pressStart.monthIndex) {
+            // 如果是前月
+            [monthIndex, pressStart.monthIndex] = [pressStart.monthIndex, monthIndex];
+            [dateIndex, pressStart.dateIndex] = [pressStart.dateIndex, dateIndex];
+          }else if(monthIndex === pressStart.monthIndex) {
+            // 如果是同月
+            if(dateIndex < pressStart.dateIndex) {
+              [dateIndex, pressStart.dateIndex] = [pressStart.dateIndex, dateIndex]
+            }
+          }
+          // 将开始月选择的(按下日期以及之后)置反
+          for(let i = dateIndex; i < monthDaysArr[dateIndex].length; i++) {
+
+          }
+          // 将结束月选择的(松开日期以及之前)置反
+
+          // 将开始结束之间选择的置反
+        }
+      },
       handleDayNameClick(monthIndex, dayNameIndex) {
         this.monthDaysArr[monthIndex]
           .forEach(date => {
-            if(date.day === dayNameIndex) {
+            if (date.day === dayNameIndex) {
               date.isSelected = !date.isSelected
             }
           })
@@ -89,7 +126,11 @@
       }
     },
     mounted() {
+      window.addEventListener('mouseup', this.upEvent)
       this.monthDaysArr = this.getMonthDaysArr(this.toolOptions.year)
+    },
+    destroyed() {
+      window.removeEventListener('mouseup', this.upEvent)
     }
   }
 </script>
