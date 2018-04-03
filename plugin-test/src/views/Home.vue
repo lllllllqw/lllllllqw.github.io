@@ -14,6 +14,10 @@
   import MyInput from '../components/MyInputOtherTwo.vue'
   export default {
     name: 'home',
+    // 向所有的子孙后代注入这个值,通过inject接收
+    provide: {
+      pName: '提供的名字'
+    },
     components: {
       MyInput
     },

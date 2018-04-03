@@ -11,6 +11,11 @@
         type: String,
         default: ''
       }
+    },
+    // 接收祖先组件传来的provide
+    inject: ['pName'],
+    mounted() {
+      console.log(this.pName)
     }
   }
 </script>
