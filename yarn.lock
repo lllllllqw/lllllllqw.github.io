@@ -130,6 +130,12 @@ domutils@^1.5.1:
     dom-serializer "0"
     domelementtype "1"
 
+echarts@^4.0.4:
+  version "4.0.4"
+  resolved "http://registry.npm.taobao.org/echarts/download/echarts-4.0.4.tgz#36aa8a47d33543d3dfe6a7bc1228ddc3a1e41157"
+  dependencies:
+    zrender "4.0.3"
+
 element-ui@^2.3.2:
   version "2.3.2"
   resolved "http://registry.npm.taobao.org/element-ui/download/element-ui-2.3.2.tgz#c34ddc4474b2209b3bfbab1c633b10a4e70964cb"
@@ -289,3 +295,7 @@ throttle-debounce@^1.0.1:
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+zrender@4.0.3:
+  version "4.0.3"
+  resolved "http://registry.npm.taobao.org/zrender/download/zrender-4.0.3.tgz#801ef001101750a61857f84e64c4d5fb3c88cca7"
