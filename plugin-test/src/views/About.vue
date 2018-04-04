@@ -18,6 +18,7 @@ export default {
   },
   methods: {
     fetchWeather() {
+      console.log(this.city)
       fetchWeather(this.city).then(res => {
         this.weatherData = res.data.result
         console.log(res.data)
