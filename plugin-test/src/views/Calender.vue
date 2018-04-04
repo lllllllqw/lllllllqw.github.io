@@ -37,7 +37,7 @@
   export default {
     data() {
       return {
-        MONTH_NAMES,
+        MONTH_NAMES, 
         DAY_NAMES,
         toolOptions: {
           year: 2018,

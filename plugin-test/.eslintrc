@@ -5,6 +5,7 @@
     "eslint:recommended"
   ],
   "rules": {
-    "no-use-before-define":"warn"
+    "no-use-before-define":"warn",
+    "no-console": "warn"
   }
 }
