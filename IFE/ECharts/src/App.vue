@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div class="home-block" @click="$router.push('/')" style="float: none;">
+      Home
+    </div>
     <router-view/>
   </div>
 </template>
@@ -19,9 +22,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-.e-charts {
-  height: 400px;
-  width: 700px;
 }
 </style>

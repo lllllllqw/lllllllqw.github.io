@@ -1,6 +1,6 @@
 <template>
   <!-- 要求在一个图表中展示柱状图跟折线图 -->
-  <div ref="barAndLine" class="e-charts"></div>
+  <div ref="e-charts" class="e-charts"></div>
 </template>
 <script>
 import { codeSubmission, bugResolve } from '../../static/e-charts-data'
@@ -12,7 +12,7 @@ export default {
   },
   methods: {
     initEcharts() {
-      this.charts = this.$echarts.init(this.$refs.barAndLine)
+      this.charts = this.$echarts.init(this.$refs['e-charts'])
       this.charts.setOption({
         title: {
           text: '柱状图,折线图一起绘制'

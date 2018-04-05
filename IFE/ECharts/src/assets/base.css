@@ -1,0 +1,18 @@
+.home-block {
+  float: left;
+  margin: 5px;
+  height: 50px;
+  line-height: 50px;
+  width: 100px;
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.home-block:hover {
+  background-color: skyblue;
+}
+
+.e-charts {
+  height: 400px;
+  width: 700px;
+}
