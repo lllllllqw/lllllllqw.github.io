@@ -1,32 +1,32 @@
-// 代码提交量
+// 代码提交次数
 export const codeSubmission = [
   {
     date: '周日',
-    val: 123,
+    val: 12,
     suffix: '行'
   }, {
     date: '周一',
-    val: 445,
+    val: 5,
     suffix: '行'
   }, {
     date: '周二',
-    val: 223,
+    val: 3,
     suffix: '行'
   }, {
     date: '周三',
-    val: 132,
+    val: 7,
     suffix: '行'
   }, {
     date: '周四',
-    val: 783,
+    val: 3,
     suffix: '行'
   }, {
     date: '周五',
-    val: 312,
+    val: 4,
     suffix: '行'
   }, {
     date: '周六',
-    val: 12,
+    val: 11,
     suffix: '行'
   }
 ]

@@ -27,7 +27,7 @@ export default {
           type: 'bar',
           data: bugResolve.map(val => val.val)
         }, {
-          name: '代码提交行数',
+          name: '代码提交次数',
           type: 'line',
           data: codeSubmission.map(val => val.val)
         }]

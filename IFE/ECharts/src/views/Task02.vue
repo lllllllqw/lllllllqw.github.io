@@ -19,19 +19,39 @@ export default {
         },
         tooltip: {},
         xAxis: {
-          data: bugResolve.map(val => val.date)
+          name: '日期',
+          position: 'top',
+          data: bugResolve.map(val => val.date),
+          nameTextStyle: {
+            color: 'red',
+            fontSize: '18'
+          },
+          axisLine: {
+            lineStyle: {
+              color: 'red'
+            }
+          }
         },
-        yAxis: {},
+        yAxis: {
+          inverse: true
+        },
         series: [{
           name: 'Bug解决数量',
           type: 'bar',
-          data: bugResolve.map(val => val.val)
+          data: bugResolve.map(val => val.val),
+          label: {
+            show: true,
+            formatter: function(item) {
+              return item.data > 3 ? '多' : '少'
+            }
+          }
         }, {
-          name: '代码提交行数',
-          type: 'line',
+          name: '代码提交次数',
+          type: 'bar',
           data: codeSubmission.map(val => val.val)
         }]
       })
+      console.log(this.charts)
     }
   },
   mounted() {
