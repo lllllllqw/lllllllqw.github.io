@@ -1,1 +1,1 @@
-export const views = ['Task01', 'Task02']
+export const views = ['Task01', 'Task02', 'Task03']
