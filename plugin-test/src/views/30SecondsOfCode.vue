@@ -6,21 +6,26 @@
 </template>
 
 <script>
-  import _30S from '30-seconds-of-code'
-  export default {
-    data() {
-      return {
-        value: ''
-      }
-    },
-    methods: {
-      look30S(e) {
-        console.log(this.value)
-        console.log(e.target.tagName,e.target.parentNode.tagName?e.target.parentNode.tagName:'没有父级')
-      }
-    },
-    mounted() {
-      console.log(_30S)
+import _30S from '30-seconds-of-code'
+import {
+  requireParameter
+} from '../utils/util'
+export default {
+  data() {
+    return {
+      value: ''
     }
+  },
+  methods: {
+    look30S(e) {
+      console.log(this.value)
+      console.log(e.target.tagName, e.target.parentNode.tagName ? e.target.parentNode.tagName : '没有父级')
+      console.log(_30S)
+      console.log(requireParameter(1))
+    }
+  },
+  mounted() {
+
   }
+}
 </script>
