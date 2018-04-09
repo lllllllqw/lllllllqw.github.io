@@ -37,19 +37,33 @@
     }
 
     function checkImageGroup(imagesArr) {
-      for(let el of imagesArr) {
-        console.log(el.src)
-          if(isInsight(el) && !el.src) {
-            el.src = el.dataset.src
-          }
+      for (let el of imagesArr) {
+        if (isInsight(el) && !el.src) {
+          el.src = el.dataset.src
         }
+      }
     }
 
-    window.onload = function() {
-      let aImages = document.querySelectorAll('.lazyload-image')
+    // 节流
+    function throttle(func, wait = 500) {
+      let last = 0
+      return function () {
+        let now = +new Date()
+        if (now - last > wait) {
+          last = now
+          return func.apply(this, Array.from(arguments))
+        } else {
+          return false
+        }
+      }
+    }
+
+    window.onload = function () {
+      const aImages = document.querySelectorAll('.lazyload-image')
       checkImageGroup(aImages)
+      const throttledCheck = throttle(checkImageGroup, 100)
       window.addEventListener('scroll', function (e) {
-        checkImageGroup(aImages)
+        throttledCheck(aImages)
       })
     }
   </script>
