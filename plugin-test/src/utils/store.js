@@ -106,7 +106,7 @@ const hasCookie = (key) => getCookie(key) !== null
  * @author  lqw
  */
 const setCookie = (key, value, expires, path, domain, maxAge, secure) => {
-  let cookie = `${key}=${encodeURI(JSON.stringify(value))}${expires ? `; expires=${new Date(+new Date() + expires * 1000).toUTCString()}` : ''}${path ? `; path=${path}` : ''}${domain ? `;domain=${domain}` : ''}${maxAge ? `;max-age=${maxAge}` : ''}${secure ? `;secure=${secure}` : ''}`
+  const cookie = `${key}=${encodeURI(JSON.stringify(value))}${expires ? `; expires=${new Date(+new Date() + expires * 1000).toUTCString()}` : ''}${path ? `; path=${path}` : ''}${domain ? `;domain=${domain}` : ''}${maxAge ? `;max-age=${maxAge}` : ''}${secure ? `;secure=${secure}` : ''}`
   document.cookie = cookie
 }
 
@@ -124,8 +124,8 @@ const removeCookie = (key) => setCookie(key, null, -1000)
  * @author  lqw
  */
 const getCookie = (key) => {
-  for (let val of document.cookie.split(';')) {
-    let arr = val.split('=')
+  for (const val of document.cookie.split(';')) {
+    const arr = val.split('=')
     if (arr[0] === key) {
       return JSON.parse(decodeURI(arr[1]))
     }
@@ -138,8 +138,8 @@ const getCookie = (key) => {
  * @author  lqw
  */
 const clearCookie = () => {
-  for (let val of document.cookie.split(';')) {
-    let arr = val.split('=')
+  for (const val of document.cookie.split(';')) {
+    const arr = val.split('=')
     removeCookie(arr[0])
   }
 }

@@ -6,7 +6,7 @@ import _import from './utils/_import'
 
 Vue.use(Router)
 
-const nameList = [ 'About', '30SecondsOfCode', 'AboutElement', 'Calender']
+const nameList = ['About', '30SecondsOfCode', 'AboutElement', 'Calender', 'imageLazyLoad']
 
 const lazyRoutes = nameList.map(val => {
   return {
@@ -34,7 +34,7 @@ export default new Router({
       redirect: '/404'
     }
   ],
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 }
   }
 })

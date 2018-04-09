@@ -12,24 +12,23 @@
 </template>
 
 <script>
-  import axios from 'axios'
+import axios from 'axios'
 
-  export default {
-    mounted() {
-      // const getUser = () => {
-      //   return this.$fetch.get('/mock')
-      // }
-      // const getTimestamp = () => {
-      //   return this.$fetch.get('/mock/timestamp')
-      // }
-      // axios.all([getUser(), getTimestamp()])
-      //   .then(axios.spread(function (acct, perms) {
-      //     console.log(acct, perms)
-      //   }))
-    }
+export default {
+  mounted() {
+    // const getUser = () => {
+    //   return this.$fetch.get('/mock')
+    // }
+    // const getTimestamp = () => {
+    //   return this.$fetch.get('/mock/timestamp')
+    // }
+    // axios.all([getUser(), getTimestamp()])
+    //   .then(axios.spread(function (acct, perms) {
+    //     console.log(acct, perms)
+    //   }))
   }
+}
 </script>
-
 
 <style lang="scss">
   #app {
