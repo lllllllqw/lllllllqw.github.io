@@ -16,6 +16,7 @@
 
 <body>
   <div>
+    <img alt="first" class="first-image">
     <img class="lazyload-image" data-src="./static/a.jpg" alt="Loading">
     <img class="lazyload-image" data-src="./static/b.jpg" alt="Loading">
     <img class="lazyload-image" data-src="./static/c.jpg" alt="Loading">
@@ -29,44 +30,8 @@
     <img class="lazyload-image" data-src="./static/k.jpg" alt="Loading">
     <img class="lazyload-image" data-src="./static/l.jpg" alt="Loading">
   </div>
-  <script>
-    function isInsight(el) {
-      const bound = el.getBoundingClientRect()
-      const innerHeight = window.innerHeight
-      return bound.top < innerHeight + 100
-    }
-
-    function checkImageGroup(imagesArr) {
-      for (let el of imagesArr) {
-        if (isInsight(el) && !el.src) {
-          el.src = el.dataset.src
-        }
-      }
-    }
-
-    // 节流
-    function throttle(func, wait = 500) {
-      let last = 0
-      return function () {
-        let now = +new Date()
-        if (now - last > wait) {
-          last = now
-          return func.apply(this, Array.from(arguments))
-        } else {
-          return false
-        }
-      }
-    }
-
-    window.onload = function () {
-      const aImages = document.querySelectorAll('.lazyload-image')
-      checkImageGroup(aImages)
-      const throttledCheck = throttle(checkImageGroup, 100)
-      window.addEventListener('scroll', function (e) {
-        throttledCheck(aImages)
-      })
-    }
-  </script>
+  <script src="./dist/main.js"></script>
+  <!-- <script src="./src/index.js"></script> -->
 </body>
 
 </html>

@@ -26,6 +26,12 @@
       "script": "build",
       "path": "plugin-test/",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "imageLazyLoad/",
+      "problemMatcher": []
     }
   ]
 }
