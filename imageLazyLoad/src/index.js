@@ -1,6 +1,7 @@
 import 'babel-polyfill'
 import Vue from 'vue'
 
+import './index.css'
 import img from '../static/a.jpg'
 
 function isInsight(el) {

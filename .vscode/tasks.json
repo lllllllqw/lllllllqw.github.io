@@ -32,6 +32,12 @@
       "script": "dev",
       "path": "imageLazyLoad/",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "path": "imageLazyLoad/",
+      "problemMatcher": []
     }
   ]
 }

@@ -22,7 +22,14 @@ module.exports = {
       // 使用url-loader加载图片
       test: /\.(png|jpg|git)$/,
       use: [{
-        loader: 'url-loader'
+        loader: 'file-loader'
+      }]
+    }, {
+      test: /\.css$/,
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader'
       }]
     }]
   }
