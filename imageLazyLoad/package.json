@@ -19,6 +19,6 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack --mode production"
   }
 }
