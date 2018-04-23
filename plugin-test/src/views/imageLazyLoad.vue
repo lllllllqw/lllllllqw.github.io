@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import elementResizeDetectorMaker from 'element-resize-detector'
 export default {
   data() {
     return {
@@ -33,13 +34,11 @@ export default {
     }
   },
   mounted() {
-    const bound = document.querySelectorAll('.flex-column-item>img')[1]
-    window.addEventListener('scroll', ev => {
-      const h = bound.getBoundingClientRect().y - window.innerHeight
-      if (h <= 100) {
-        console.log('可以显示')
-      }
+    var erdUltraFast = elementResizeDetectorMaker({
+      strategy: 'scroll' // <- For ultra performance.
     })
+
+    erdUltraFast.listenTo(document.querySelector('body'), e => console.log(e))
   }
 }
 </script>
