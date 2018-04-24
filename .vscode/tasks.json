@@ -38,6 +38,12 @@
       "script": "build",
       "path": "imageLazyLoad/",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "IFE/San/",
+      "problemMatcher": []
     }
   ]
 }
