@@ -1,9 +1,14 @@
 const MiniPromise = require('./Promise')
 
-let foo = new MiniPromise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('成功')
-  }, 500)
-})
+function createPromise() {
+  return new MiniPromise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('成功')
+    }, 500)
+  })
+}
 
-console.log(foo)
+createPromise()
+  .then(res => {
+    console.log(`获得值${res}`)
+  })
