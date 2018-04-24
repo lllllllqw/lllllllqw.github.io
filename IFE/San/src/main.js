@@ -1,3 +1,15 @@
-const p = document.createElement('p')
-p.innerHTML = 'hello world'
-document.querySelector('body').appendChild(p)
+import san from 'san'
+
+const App = san.defineComponent({
+  template: `
+    <p>Hello {{name}}!</p>
+  `,
+  initData: function() {
+    return {
+      name: 'San'
+    }
+  }
+})
+
+const app = new App()
+app.attach(document.body)
