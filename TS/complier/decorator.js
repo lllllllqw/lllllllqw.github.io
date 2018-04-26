@@ -45,10 +45,10 @@ var Greeter = /** @class */ (function () {
     };
     __decorate([
         functionDecorator('123')
-    ], Greeter.prototype, "greet");
+    ], Greeter.prototype, "greet", null);
     Greeter = __decorate([
         classDecorator
     ], Greeter);
     return Greeter;
 }());
-// console.log(new Greeter("world").property); 
+// console.log(new Greeter("world").property);

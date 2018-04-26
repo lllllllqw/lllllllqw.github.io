@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./complier",
+    "allowJs": false,
+    "target": "es5",
+    "experimentalDecorators": true,
+    "noImplicitAny": true
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
