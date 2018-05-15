@@ -33,3 +33,34 @@ let y: string = x[0].toFixed(12)
 enum Color {RED, GREEN, BLUE}
 let color: Color = Color.BLUE
 console.log(Color[color])
+
+interface ToFixedWish {
+  a: number,
+  b?: string
+}
+
+const a: ToFixedWish = {
+  a: 3
+}
+
+function indentity<T extends ToFixedWish>(arg: Array<T>): Array<T> {
+  return arg
+}
+
+indentity([{a: 1}])
+
+interface Nnnn {
+  ss: number
+  name: string
+}
+
+class Person {
+  name: string
+}
+
+let person: Nnnn = new Person()
+
+let s: Nnnn
+let per: Person
+
+console.log(s === per)

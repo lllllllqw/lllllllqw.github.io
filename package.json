@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "30-seconds-of-code": "^0.0.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "cheerio": "^1.0.0-rc.2",
     "echarts": "^4.0.4",
     "element-ui": "^2.3.2",

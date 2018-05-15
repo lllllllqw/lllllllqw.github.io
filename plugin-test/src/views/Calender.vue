@@ -25,114 +25,114 @@
 </template>
 
 <script>
-  import {
-    isLeapYear,
-    generateDateModel
-  } from '../utils/util.js'
-  import {
-    MONTH_NAMES,
-    DAY_NAMES
-  } from '../utils/constant.js'
+import {
+  isLeapYear,
+  generateDateModel
+} from '../utils/util.js'
+import {
+  MONTH_NAMES,
+  DAY_NAMES
+} from '../utils/constant.js'
 
-  export default {
-    data() {
-      return {
-        MONTH_NAMES, 
-        DAY_NAMES,
-        toolOptions: {
-          year: 2018,
-        },
-        isPressMove: false,
-        monthDaysArr: [],
-        pressStart: {
-          monthIndex: 0,
-          dateIndex: 0
-        }
+export default {
+  data() {
+    return {
+      MONTH_NAMES,
+      DAY_NAMES,
+      toolOptions: {
+        year: 2018
+      },
+      isPressMove: false,
+      monthDaysArr: [],
+      pressStart: {
+        monthIndex: 0,
+        dateIndex: 0
       }
-    },
-    computed: {
-
-    },
-    watch: {
-      'toolOptions.year' (val) {
-        this.updateMonthDaysArr(val)
-      }
-    },
-    methods: {
-      getMonthDaysArr() {
-        // 生成每月天数的数组
-        let arr = new Array(31, 28 + isLeapYear(this.toolOptions.year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
-        let resArr = []
-        // 生成一年的所有日期
-        arr.forEach((val, index) => {
-          let month = []
-          for (let i = 1; i <= val; i++) {
-            month.push(generateDateModel(this.toolOptions.year, index, i, {
-              'isSelected': false
-            }))
-          }
-          resArr.push(month)
-        })
-        return resArr
-      },
-      handleDateBoxClick(monthIndex, dateIndex) {
-        this.changeDateSelection(monthIndex, dateIndex)
-      },
-      upEvent() {
-        console.log('window关闭')
-        this.isPressMove = false
-      },
-      handleDateBoxMouseDown(monthIndex, dateIndex) {
-        this.isPressMove = true
-        this.pressStart.monthIndex = monthIndex
-        this.pressStart.dateIndex = dateIndex
-      },
-      handleDateBoxMouseUp(monthIndex, dateIndex) {
-        if (this.isPressMove) {
-          let {pressStart, monthDaysArr} = this
-          // 如果往前选,交换index
-          if(monthIndex < pressStart.monthIndex) {
-            // 如果是前月
-            [monthIndex, pressStart.monthIndex] = [pressStart.monthIndex, monthIndex];
-            [dateIndex, pressStart.dateIndex] = [pressStart.dateIndex, dateIndex];
-          }else if(monthIndex === pressStart.monthIndex) {
-            // 如果是同月
-            if(dateIndex < pressStart.dateIndex) {
-              [dateIndex, pressStart.dateIndex] = [pressStart.dateIndex, dateIndex]
-            }
-          }
-          // 将开始月选择的(按下日期以及之后)置反
-          for(let i = dateIndex; i < monthDaysArr[dateIndex].length; i++) {
-
-          }
-          // 将结束月选择的(松开日期以及之前)置反
-
-          // 将开始结束之间选择的置反
-        }
-      },
-      handleDayNameClick(monthIndex, dayNameIndex) {
-        this.monthDaysArr[monthIndex]
-          .forEach(date => {
-            if (date.day === dayNameIndex) {
-              date.isSelected = !date.isSelected
-            }
-          })
-      },
-      changeDateSelection(monthIndex, dateIndex) {
-        this.$set(this.monthDaysArr[monthIndex][dateIndex], 'isSelected', !this.monthDaysArr[monthIndex][dateIndex].isSelected)
-      },
-      updateMonthDaysArr(year) {
-        this.monthDaysArr = this.getMonthDaysArr(year)
-      }
-    },
-    mounted() {
-      window.addEventListener('mouseup', this.upEvent)
-      this.monthDaysArr = this.getMonthDaysArr(this.toolOptions.year)
-    },
-    destroyed() {
-      window.removeEventListener('mouseup', this.upEvent)
     }
+  },
+  computed: {
+
+  },
+  watch: {
+    'toolOptions.year'(val) {
+      this.updateMonthDaysArr(val)
+    }
+  },
+  methods: {
+    getMonthDaysArr() {
+      // 生成每月天数的数组
+      const arr = new Array(31, 28 + isLeapYear(this.toolOptions.year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+      const resArr = []
+      // 生成一年的所有日期
+      arr.forEach((val, index) => {
+        const month = []
+        for (let i = 1; i <= val; i++) {
+          month.push(generateDateModel(this.toolOptions.year, index, i, {
+            'isSelected': false
+          }))
+        }
+        resArr.push(month)
+      })
+      return resArr
+    },
+    handleDateBoxClick(monthIndex, dateIndex) {
+      this.changeDateSelection(monthIndex, dateIndex)
+    },
+    upEvent() {
+      console.log('window关闭')
+      this.isPressMove = false
+    },
+    handleDateBoxMouseDown(monthIndex, dateIndex) {
+      this.isPressMove = true
+      this.pressStart.monthIndex = monthIndex
+      this.pressStart.dateIndex = dateIndex
+    },
+    handleDateBoxMouseUp(monthIndex, dateIndex) {
+      if (this.isPressMove) {
+        const { pressStart, monthDaysArr } = this
+        // 如果往前选,交换index
+        if (monthIndex < pressStart.monthIndex) {
+          // 如果是前月
+          [monthIndex, pressStart.monthIndex] = [pressStart.monthIndex, monthIndex];
+          [dateIndex, pressStart.dateIndex] = [pressStart.dateIndex, dateIndex]
+        } else if (monthIndex === pressStart.monthIndex) {
+          // 如果是同月
+          if (dateIndex < pressStart.dateIndex) {
+            [dateIndex, pressStart.dateIndex] = [pressStart.dateIndex, dateIndex]
+          }
+        }
+        // 将开始月选择的(按下日期以及之后)置反
+        for (let i = dateIndex; i < monthDaysArr[dateIndex].length; i++) {
+
+        }
+        // 将结束月选择的(松开日期以及之前)置反
+
+        // 将开始结束之间选择的置反
+      }
+    },
+    handleDayNameClick(monthIndex, dayNameIndex) {
+      this.monthDaysArr[monthIndex]
+        .forEach(date => {
+          if (date.day === dayNameIndex) {
+            date.isSelected = !date.isSelected
+          }
+        })
+    },
+    changeDateSelection(monthIndex, dateIndex) {
+      this.$set(this.monthDaysArr[monthIndex][dateIndex], 'isSelected', !this.monthDaysArr[monthIndex][dateIndex].isSelected)
+    },
+    updateMonthDaysArr(year) {
+      this.monthDaysArr = this.getMonthDaysArr(year)
+    }
+  },
+  mounted() {
+    window.addEventListener('mouseup', this.upEvent)
+    this.monthDaysArr = this.getMonthDaysArr(this.toolOptions.year)
+  },
+  destroyed() {
+    window.removeEventListener('mouseup', this.upEvent)
   }
+}
 </script>
 
 <style scoped src="../assets/css/Calendar.css"></style>
