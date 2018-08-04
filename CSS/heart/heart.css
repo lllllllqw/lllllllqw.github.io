@@ -1,0 +1,27 @@
+.heart {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #f00;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+
+.heart:after,
+.heart:before {
+  content: '';
+  position: fixed;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.heart:after {
+  top: -50%;
+}
+
+.heart:before {
+  left: -50%;
+}
