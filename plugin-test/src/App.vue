@@ -6,6 +6,9 @@
       <router-link to="/30SecondsOfCode">30SecondsOfCode</router-link>
       <router-link to="/AboutElement">AboutElement</router-link>
       <router-link to="/Calender">日历</router-link>
+      <router-link to="/PasswordInput">密码输入框</router-link>
+      <router-link to="/HandsonTable">HandsonTable</router-link>
+      <router-link to="/SQLEditor">SQL编辑器</router-link>
     </div>
     <router-view/>
   </div>
@@ -16,6 +19,7 @@ import axios from 'axios'
 
 export default {
   mounted() {
+    console.log(this)
     // const getUser = () => {
     //   return this.$fetch.get('/mock')
     // }

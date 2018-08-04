@@ -2,11 +2,13 @@
   <div @contextmenu.prevent="look30S">
     <button @click.exact="look30S">点我</button>
     <input type="text" v-model="value" @input="look30S">
+    <CounterContainer />
   </div>
 </template>
 
 <script>
 import _30S from '30-seconds-of-code'
+import CounterContainer from '../containers/ConterContainer'
 import {
   requireParameter
 } from '../utils/util'
@@ -15,6 +17,9 @@ export default {
     return {
       value: ''
     }
+  },
+  components: {
+    CounterContainer
   },
   methods: {
     look30S(e) {

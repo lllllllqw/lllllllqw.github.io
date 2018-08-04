@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>heart</title>
+  <meta name="description" content="使用 css 伪类实现的爱心图形" />
+  <style>
+    .heart {
+      width: 10px;
+      height: 10px;
+      position: fixed;
+      background: #f00;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+    }
+
+    .heart:after,
+    .heart:before {
+      content: '';
+      width: inherit;
+      height: inherit;
+      background: inherit;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      position: fixed;
+    }
+
+    .heart:after {
+      top: -5px;
+    }
+
+    .heart:before {
+      left: -5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="heart"></div>
+  </div>
+</body>
+
+</html>

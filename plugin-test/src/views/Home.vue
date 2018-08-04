@@ -1,34 +1,46 @@
 <template>
   <div class="home">
-    <div>父组件</div>
-    <input type="text" v-model="defaultText">
-    <div>子组件</div>
-    <my-input v-model="defaultText"></my-input>
+    <el-select-popover>
+      <report-hierarchy-tree
+      />
+    </el-select-popover>
   </div>
 </template>
 
 <script>
-// import MyInput from '../components/MyInput'
-// import MyInput from '../components/MyInputOther.vue'
-import MyInput from '../components/MyInputOtherTwo.vue'
+import ElSelectPopover from '../components/ElSelectPopover'
+import ReportHierarchyTree from '../components/ReportHierarchyTree'
+
 export default {
   name: 'home',
+
   // 向所有的子孙后代注入这个值,通过inject接收
   provide: {
     pName: '提供的名字'
   },
+
   components: {
-    MyInput
+    ElSelectPopover,
+    ReportHierarchyTree
   },
-  watch: {
-  },
+
   data() {
     return {
-      defaultText: '1'
+      selected: ''
     }
   },
-  methods: {},
+
+  methods: {
+    openPopover() {
+      this.$nextTick(() => {
+        console.dir(this.$refs.popoverButton.$el.focus())
+        // this.$refs.popoverButton.$el.click()
+      })
+    }
+  },
+
   mounted() {
+    console.log(this)
   }
 }
 </script>

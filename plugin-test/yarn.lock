@@ -534,6 +534,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@handsontable/vue@^2.0.0-beta1":
+  version "2.0.0-beta1"
+  resolved "http://registry.npm.taobao.org/@handsontable/vue/download/@handsontable/vue-2.0.0-beta1.tgz#81bb727dbbe29a8f24181632864a21b26d22965a"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "http://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -638,6 +642,10 @@
 "@vue/web-component-wrapper@^1.2.0":
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/@vue/web-component-wrapper/download/@vue/web-component-wrapper-1.2.0.tgz#bb0e46f1585a7e289b4ee6067dcc5a6ae62f1dd1"
+
+"@xunlei/vuex-connector@^0.3.1":
+  version "0.3.1"
+  resolved "http://registry.npm.taobao.org/@xunlei/vuex-connector/download/@xunlei/vuex-connector-0.3.1.tgz#8b2a46c23ddf664c05580c2af4b1c7fcb0ebdd11"
 
 abbrev@1:
   version "1.1.1"
@@ -898,8 +906,8 @@ async-foreach@^0.1.3:
   resolved "http://registry.npm.taobao.org/async-foreach/download/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
 
 async-validator@~1.8.1:
-  version "1.8.2"
-  resolved "http://registry.npm.taobao.org/async-validator/download/async-validator-1.8.2.tgz#b77597226e96242f8d531c0d46ae295f62422ba4"
+  version "1.8.5"
+  resolved "http://registry.npm.taobao.org/async-validator/download/async-validator-1.8.5.tgz#dc3e08ec1fd0dddb67e60842f02c0cd1cec6d7f0"
   dependencies:
     babel-runtime "6.x"
 
@@ -995,7 +1003,7 @@ babel-eslint@^8.2.2:
     eslint-scope "~3.7.1"
     eslint-visitor-keys "^1.0.0"
 
-babel-helper-vue-jsx-merge-props@^2.0.0, babel-helper-vue-jsx-merge-props@^2.0.3:
+babel-helper-vue-jsx-merge-props@^2.0.0, babel-helper-vue-jsx-merge-props@^2.0.2, babel-helper-vue-jsx-merge-props@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/babel-helper-vue-jsx-merge-props/download/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
 
@@ -1562,6 +1570,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
+codemirror@^5.32.0, codemirror@^5.39.0:
+  version "5.39.0"
+  resolved "http://registry.npm.taobao.org/codemirror/download/codemirror-5.39.0.tgz#4654f7d2f7e525e04a62e72d9482348ccb37dce5"
+
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/collection-visit/download/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -1733,7 +1745,11 @@ copy-webpack-plugin@^4.5.0:
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
 
-core-js@^2.4.0, core-js@^2.5.3:
+core-js@^2.4.0:
+  version "2.5.7"
+  resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
+
+core-js@^2.5.3:
   version "2.5.3"
   resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.5.3.tgz#8acc38345824f16d8365b7c9b4259168e8ed603e"
 
@@ -2092,6 +2108,10 @@ detect-node@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/detect-node/download/detect-node-2.0.3.tgz#a2033c09cc8e158d37748fbde7507832bd6ce127"
 
+diff-match-patch@^1.0.0:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/diff-match-patch/download/diff-match-patch-1.0.1.tgz#d5f880213d82fbc124d2b95111fb3c033dbad7fa"
+
 diffie-hellman@^5.0.0:
   version "5.0.2"
   resolved "http://registry.npm.taobao.org/diffie-hellman/download/diffie-hellman-5.0.2.tgz#b5835739270cfe26acf632099fded2a07f209e5e"
@@ -2189,6 +2209,16 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
+echarts-amap@^1.0.0-rc.6:
+  version "1.0.0-rc.6"
+  resolved "http://registry.npm.taobao.org/echarts-amap/download/echarts-amap-1.0.0-rc.6.tgz#5782a74daee52ed44ce3f8f62577561783f09e16"
+
+echarts@^4.1.0:
+  version "4.1.0"
+  resolved "http://registry.npm.taobao.org/echarts/download/echarts-4.1.0.tgz#d588c95f73c1a9928b9c73d5b769751c3185bcdc"
+  dependencies:
+    zrender "4.0.4"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -2208,13 +2238,14 @@ element-resize-detector@^1.1.14:
     batch-processor "^1.0.0"
 
 element-ui@^2.2.2:
-  version "2.2.2"
-  resolved "http://registry.npm.taobao.org/element-ui/download/element-ui-2.2.2.tgz#40935d55e2eb007e6a5d2e766fc4bcc2266eb571"
+  version "2.4.5"
+  resolved "http://registry.npm.taobao.org/element-ui/download/element-ui-2.4.5.tgz#ca1d0fc3f6ec0b5ca2a717655e6778a8e24ca673"
   dependencies:
     async-validator "~1.8.1"
     babel-helper-vue-jsx-merge-props "^2.0.0"
     deepmerge "^1.2.0"
     normalize-wheel "^1.0.1"
+    resize-observer-polyfill "^1.5.0"
     throttle-debounce "^1.0.1"
 
 elliptic@^6.0.0:
@@ -2469,7 +2500,7 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "http://registry.npm.taobao.org/etag/download/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
 
-event-emitter@~0.3.5:
+event-emitter@^0.3.4, event-emitter@~0.3.5:
   version "0.3.5"
   resolved "http://registry.npm.taobao.org/event-emitter/download/event-emitter-0.3.5.tgz#df8c69eef1647923c7157b9ce83840610b02cc39"
   dependencies:
@@ -3103,6 +3134,14 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2:
 handle-thing@^1.2.5:
   version "1.2.5"
   resolved "http://registry.npm.taobao.org/handle-thing/download/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
+
+handsontable@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/handsontable/download/handsontable-3.0.0.tgz#3e1ac839882439fc2f4f7498f5b75c98159a59b7"
+  dependencies:
+    moment "2.20.1"
+    numbro "1.11.0"
+    pikaday "1.5.1"
 
 har-schema@^1.0.5:
   version "1.0.5"
@@ -4400,6 +4439,14 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+moment@2.20.1:
+  version "2.20.1"
+  resolved "http://registry.npm.taobao.org/moment/download/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+
+moment@2.x:
+  version "2.22.1"
+  resolved "http://registry.npm.taobao.org/moment/download/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -4656,6 +4703,10 @@ num2fraction@^1.2.2:
 number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/number-is-nan/download/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
+
+numbro@1.11.0:
+  version "1.11.0"
+  resolved "http://registry.npm.taobao.org/numbro/download/numbro-1.11.0.tgz#39aa17b358b4682aec8ca0d5755f35c5d9ce8f9e"
 
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
@@ -4994,6 +5045,12 @@ pify@^2.0.0:
 pify@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/pify/download/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
+
+pikaday@1.5.1:
+  version "1.5.1"
+  resolved "http://registry.npm.taobao.org/pikaday/download/pikaday-1.5.1.tgz#0a48549bc1a14ea1d08c44074d761bc2f2bfcfd3"
+  optionalDependencies:
+    moment "2.x"
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
@@ -5793,6 +5850,10 @@ requires-port@1.0.x, requires-port@1.x.x, requires-port@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/requires-port/download/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
+resize-observer-polyfill@^1.5.0:
+  version "1.5.0"
+  resolved "http://registry.npm.taobao.org/resize-observer-polyfill/download/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/resolve-cwd/download/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -6148,6 +6209,10 @@ sort-keys@^1.0.0:
   resolved "http://registry.npm.taobao.org/sort-keys/download/sort-keys-1.1.2.tgz#441b6d4d346798f1b4e49e8920adfba0e543f9ad"
   dependencies:
     is-plain-obj "^1.0.0"
+
+sortablejs@^1.7.0:
+  version "1.7.0"
+  resolved "http://registry.npm.taobao.org/sortablejs/download/sortablejs-1.7.0.tgz#80a2b2370abd568e1cec8c271131ef30a904fa28"
 
 source-list-map@^2.0.0:
   version "2.0.0"
@@ -6519,8 +6584,8 @@ thread-loader@^1.1.5:
     loader-utils "^1.1.0"
 
 throttle-debounce@^1.0.1:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/throttle-debounce/download/throttle-debounce-1.0.1.tgz#dad0fe130f9daf3719fdea33dc36a8e6ba7f30b5"
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/throttle-debounce/download/throttle-debounce-1.1.0.tgz#51853da37be68a155cb6e827b3514a3c422e89cd"
 
 through2@^2.0.0:
   version "2.0.3"
@@ -6845,6 +6910,12 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
   version "3.2.1"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
 
+v-charts@^1.16.18:
+  version "1.16.18"
+  resolved "http://registry.npm.taobao.org/v-charts/download/v-charts-1.16.18.tgz#edefcf48915a2428d307420f0a9018cecb9067c2"
+  dependencies:
+    echarts-amap "^1.0.0-rc.6"
+
 validate-npm-package-license@^3.0.1:
   version "3.0.3"
   resolved "http://registry.npm.taobao.org/validate-npm-package-license/download/validate-npm-package-license-3.0.3.tgz#81643bcbef1bdfecd4623793dc4648948ba98338"
@@ -6873,6 +6944,13 @@ vm-browserify@0.0.4:
   resolved "http://registry.npm.taobao.org/vm-browserify/download/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+vue-codemirror@^4.0.5:
+  version "4.0.5"
+  resolved "http://registry.npm.taobao.org/vue-codemirror/download/vue-codemirror-4.0.5.tgz#3a784d454fbfb17ce769b9fc90f10e9868687ecb"
+  dependencies:
+    codemirror "^5.32.0"
+    diff-match-patch "^1.0.0"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
@@ -6911,6 +6989,14 @@ vue-router@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
+vue-smart-grid@^1.10.3:
+  version "1.10.3"
+  resolved "http://registry.npm.taobao.org/vue-smart-grid/download/vue-smart-grid-1.10.3.tgz#14d4497041767e5d8c6ad864930c9eed99630a30"
+  dependencies:
+    babel-helper-vue-jsx-merge-props "^2.0.2"
+    event-emitter "^0.3.4"
+    vue "^2.1.0"
+
 vue-style-loader@^4.0.1:
   version "4.0.2"
   resolved "http://registry.npm.taobao.org/vue-style-loader/download/vue-style-loader-4.0.2.tgz#e89aa4702a0c6b9630d8de70b1cbddb06b9ad254"
@@ -6929,7 +7015,7 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-vue@^2.5.13:
+vue@^2.1.0, vue@^2.5.13:
   version "2.5.16"
   resolved "http://registry.npm.taobao.org/vue/download/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
 
@@ -7224,3 +7310,7 @@ yorkie@^1.0.3:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
+
+zrender@4.0.4:
+  version "4.0.4"
+  resolved "http://registry.npm.taobao.org/zrender/download/zrender-4.0.4.tgz#910e60d888f00c9599073f23758dd23345fe48fd"

@@ -5,6 +5,8 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import fetch from './api/fetch'
+import './assets/Jas'
+import './components/Draggable'
 
 Vue.use(ElementUI)
 
@@ -16,12 +18,12 @@ class NewVue extends Vue {
   $$fetch() {
     return fetch
   }
-  $myName () {
+  $myName() {
     return console.log(this.name)
   }
-  static myName () {
+  static myName() {
     return console.log(this)
-  } 
+  }
 }
 
 NewVue.myName()

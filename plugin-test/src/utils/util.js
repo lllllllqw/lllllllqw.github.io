@@ -32,12 +32,20 @@ export function generateDateModel(year, month, date, extra) {
   // 创建当前时间
   const dateObj = new Date(
     `${year}-${(month + 1) > 9 ? (month + 1) : `0${(month + 1)}`}-${date > 9 ? date : `0${date}`}T00:00:00`)
+
+  const begin = new Date(+dateObj)
+  begin.setMonth(0)
+  begin.setDate(1)
+  const dateCount = Math.ceil((dateObj - begin) / (24 * 60 * 60 * 1000)) + 1
+
   let model = {
     year,
     month,
     date,
     day: dateObj.getDay(),
-    timestamp: +dateObj
+    timestamp: +dateObj,
+    dateCount,
+    weekCount: Math.ceil((dateCount + begin.getDay()) / 7)
   }
   // 添加extra内容
   if (extra) {

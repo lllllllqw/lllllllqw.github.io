@@ -6,7 +6,7 @@
   ],
   "rules": {
     "generator-star-spacing": "off",
-    "no-debugger": "warn",
+    "no-debugger": 0,
     "accessor-pairs": 2,
     "arrow-spacing": [2, {
       "before": true,

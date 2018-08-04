@@ -5,14 +5,24 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "myjs": "node ./myjs/test.js"
   },
   "dependencies": {
+    "@handsontable/vue": "^2.0.0-beta1",
+    "@xunlei/vuex-connector": "^0.3.1",
     "axios": "^0.18.0",
+    "codemirror": "^5.39.0",
+    "echarts": "^4.1.0",
     "element-resize-detector": "^1.1.14",
     "element-ui": "^2.2.2",
+    "handsontable": "^3.0.0",
+    "sortablejs": "^1.7.0",
+    "v-charts": "^1.16.18",
     "vue": "^2.5.13",
+    "vue-codemirror": "^4.0.5",
     "vue-router": "^3.0.1",
+    "vue-smart-grid": "^1.10.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
