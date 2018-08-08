@@ -22,6 +22,7 @@ const filter =
   (fn: Function) =>
     (reducer: Function) =>
       (res: Array<any>, next) => {
+        // 如果 fn 方法返回 true, 执行 reducer, 否则跳过 reducer
         if (fn(next)) {
           return reducer(res, next)
         }
@@ -43,7 +44,10 @@ const pushReducer =
     (res.push(next), res)
 
 const arr = ['2', 55, 6, 3]
+
 // const result = arr.reduce(map(e => e / 10)(filter(e => e > 5)(pushReducer)), [])
+
+// pipe 从下至上执行是否不太合理
 const result = arr.reduce(
   pipe(
     map(e => e / 10),
