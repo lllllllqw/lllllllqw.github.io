@@ -1,7 +1,9 @@
 let arr = [111,1, 23, 13, 432, 54, 4312, 321, 11, 2]
 
 function swap(arr: Array<number>, i: number, j: number) {
-  [arr[i], arr[j]] = [arr[j], arr[i]]
+  const temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
 }
 
 // 冒泡排序
@@ -96,7 +98,7 @@ function mergeSort2(arr: Array<number>): Array<number> {
 function quickSort(arr: Array<number>, left?: number, right?: number): Array<number> {
   // 如果是第一次, left 置为0, right 置为 length
   left = left === undefined ? 0 : left
-  right = right === undefined ? arr.length : right
+  right = right === undefined ? arr.length - 1 : right
 
   // 退出排序的边界条件
   if(left < right) {
@@ -112,13 +114,12 @@ function quickSort(arr: Array<number>, left?: number, right?: number): Array<num
 
 // 将 left 作为轴心,将数组排列为轴心左边比它小,右边比它大的数组
 function partition(arr: Array<number>, left: number, right: number): number {
-  const length = arr.length
   // 轴心
   let axis = left
   // 待交换索引
   let index = axis + 1
 
-  for(let i = index; i < length; i++) {
+  for(let i = index; i < right; i++) {
     // 如果对比值小于轴心值,与待交换索引交换,并且待交换索引向右挪一位
     if(arr[i] < arr[axis]) {
       swap(arr, i, index)
