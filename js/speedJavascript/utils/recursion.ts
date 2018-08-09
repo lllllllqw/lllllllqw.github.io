@@ -1,3 +1,4 @@
+// 斐波那契数列
 function fibonacci(n) {
   if(n <= 1) {
     return 1
@@ -6,6 +7,7 @@ function fibonacci(n) {
   }
 }
 
+// 阶乘
 function factorial(n) {
   if(n === 0) {
     return 1
@@ -14,6 +16,7 @@ function factorial(n) {
   }
 }
 
+// 数组求和
 function sumArray(array, start, end) {
   if(start === end){
     return array[start]
@@ -22,6 +25,7 @@ function sumArray(array, start, end) {
   }
 }
 
+// 数组求最大值
 function max(array, start, end) {
   if(start === end) {
     return array[start]
@@ -30,6 +34,7 @@ function max(array, start, end) {
   }
 }
 
+// 数组反向
 function reverse(str) {
   if(str.length === 1) {
     return str
@@ -38,6 +43,7 @@ function reverse(str) {
   }
 }
 
+// 字符串长度
 function strlen(str) {
   if(str === '') {
     return 0
@@ -46,6 +52,3 @@ function strlen(str) {
   }
 }
 
-const name = strlen('adnama423scj')
-
-console.log(`name ---> ${name}`)
