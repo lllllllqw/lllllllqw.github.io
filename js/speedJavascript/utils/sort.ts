@@ -119,7 +119,7 @@ function partition(arr: Array<number>, left: number, right: number): number {
   // 待交换索引
   let index = axis + 1
 
-  for(let i = index; i < right; i++) {
+  for(let i = index; i <= right; i++) {
     // 如果对比值小于轴心值,与待交换索引交换,并且待交换索引向右挪一位
     if(arr[i] < arr[axis]) {
       swap(arr, i, index)
