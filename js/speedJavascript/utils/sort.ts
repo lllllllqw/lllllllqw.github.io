@@ -95,7 +95,7 @@ function mergeSort2(arr: Array<number>): Array<number> {
 }
 
 // 快速排序
-function quickSort(arr: Array<number>, left?: number, right?: number): Array<number> {
+export function quickSort(arr: Array<number>, left?: number, right?: number): Array<number> {
   // 如果是第一次, left 置为0, right 置为 length
   left = left === undefined ? 0 : left
   right = right === undefined ? arr.length - 1 : right
