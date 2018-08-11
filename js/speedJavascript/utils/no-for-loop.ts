@@ -30,7 +30,7 @@ export function flatten(array: Array<any>): Array<any> {
 // 将数组分为 pass / fail 两组
 export const partition = (arr: Array<any>, isValid: Function): Array<Array<any>> => {
   return arr.reduce(([pass, fail], next) => {
-    return isValid(next) ? [[...pass, next], fail] : [pass, [next, ...fail]]
+    return isValid(next) ? [[...pass, next], fail] : [pass, [ ...fail ,next]]
   }, [[], []])
 }
 
@@ -44,7 +44,7 @@ export const mixWith = (fn: Function) => (part1: Array<any>) => (part2: Array<an
   return [fn(head1)(head2), ...mixWith(fn)(tails1)(tails2)]
 }
 
-// 从左开始找出限定个数的复合要求的值
+// 从左开始找出限定个数的符合要求的值
 export const takeLimitValid = <T>(array: Array<T>, isValid: Function, limit: number = Infinity): Array<T> => {
   if (limit === 0 || array.length === 0) {
     return []
