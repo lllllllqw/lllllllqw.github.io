@@ -53,3 +53,32 @@ export class Dictionary {
     return this.items
   }
 }
+
+function loseloseHash(key: string) {
+  let hash = 0;
+  // 将所有字符的 ASCII 码加到一起
+  key.split('').forEach((str, index) => {
+    hash += key.charCodeAt(index)
+  })
+  // 为了得到一个更小的值，取余
+  return hash % 37
+}
+
+export class HashTable {
+  private table: LObject
+  constructor() {
+    this.table = {}
+  }
+
+  put(key: string, value: any) {
+    this.table[loseloseHash(key)] = value
+  }
+
+  get(key: string) {
+    return this.table[loseloseHash(key)]
+  }
+
+  remove(key: string) {
+    this.table[loseloseHash(key)] = undefined
+  }
+}
