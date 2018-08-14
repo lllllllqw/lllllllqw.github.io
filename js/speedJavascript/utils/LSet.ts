@@ -1,9 +1,9 @@
-interface Object {
+class LObject extends Object {
   [key: string]: any
 }
 
 export class LSet {
-  private items: Object
+  private items: LObject
   constructor() {
     this.items = {}
   }
