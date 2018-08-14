@@ -6,20 +6,21 @@
 }
 .wrap {
 	width: 1000px;
+	display: flex;
 	margin: 0 auto;
 }
 
 .left-content {
+	flex: none;
 	width: 300px;
-	height: 1080px;
 	background-color: rgb(231, 231, 231);
 	float: left;
 }
 
 .right-content {
+	flex: 1;
 	padding:70px 50px 50px 50px;
 	width: 600px;
-	height: 1080px;
 	background-color: rgb(245, 245, 245);
 	float: left;
 }
@@ -44,7 +45,7 @@
 	font-weight: bold;
 }
 
-.job{
+.profession{
 	padding-bottom: 10px;
 	font-size: 20px;
 }
@@ -63,7 +64,7 @@
 	margin-top: 50px;
 	margin-left: 20%;
 	width: 60%;
-	height: 3px;
+	height: 2px;
 	border-color: #000;
 	background-color: #000;
 }
@@ -110,6 +111,10 @@ span.section-lists-suffix{
 	color: green;
 }
 
+.section-lists-name, .section-lists-suffix {
+	padding-left: 10px;
+}
+
 ul.section-lists-text li{
 	padding-top: 10px;
 }
@@ -121,4 +126,8 @@ ul.section-lists-text>li span{
 
 p.section-text{
 	margin-top: 20px;
+}
+
+.gray {
+	color: gray;
 }
