@@ -78,10 +78,10 @@ export class LinkedList {
     }
   }
 
-  // 清空链表
-  remove(element: any): void {
-    this.length = 0
-    this.head = null
+  // 移除链表中某个元素
+  remove(element: any) {
+    const index = this.indexOf(element)
+    return this.removeAt(index)
   }
 
   // 寻找链表中的元素
@@ -109,8 +109,8 @@ export class LinkedList {
   }
 
   // 获取链表的起点
-  getHead(): any {
-    return this.head.element
+  getHead() {
+    return this.head
   }
 
   // 将链表转为字符串
