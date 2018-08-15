@@ -137,13 +137,5 @@ export class HashTable {
     }
     return false
   }
-
-  print() {
-    this.table.forEach((e: any, index: number) => {
-      if(e) {
-        console.log(index, ':', e)
-      }
-    })
-  }
 }
 
