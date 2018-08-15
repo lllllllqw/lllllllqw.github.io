@@ -1,5 +1,5 @@
 // 斐波那契数列
-function fibonacci(n) {
+function fibonacci(n: number): number {
   if(n <= 1) {
     return 1
   } else {
@@ -8,7 +8,7 @@ function fibonacci(n) {
 }
 
 // 阶乘
-function factorial(n) {
+function factorial(n: number): number {
   if(n === 0) {
     return 1
   } else {
@@ -17,7 +17,7 @@ function factorial(n) {
 }
 
 // 数组求和
-function sumArray(array, start, end) {
+function sumArray(array: number[], start: number, end: number): number {
   if(start === end){
     return array[start]
   } else {
@@ -26,7 +26,7 @@ function sumArray(array, start, end) {
 }
 
 // 数组求最大值
-function max(array, start, end) {
+function max(array: number[], start: number, end: number): number {
   if(start === end) {
     return array[start]
   }else {
@@ -35,7 +35,7 @@ function max(array, start, end) {
 }
 
 // 数组反向
-function reverse(str) {
+function reverse(str: string): string {
   if(str.length === 1) {
     return str
   } else {
@@ -44,7 +44,7 @@ function reverse(str) {
 }
 
 // 字符串长度
-function strlen(str) {
+function strlen(str: string): number {
   if(str === '') {
     return 0
   } else {
