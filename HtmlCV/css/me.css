@@ -25,14 +25,8 @@
 	float: left;
 }
 
-.photo {
-	width: 200px;
-	height: 200px;
-	margin: 100px 50px 50px 50px;
-	border: 1px solid #000;
-}
-
 .name-part{
+	margin-top: 80px;
 	text-align: center;
 	background-color: rgb(70,90,128);
 	color: #FFF;
@@ -126,6 +120,8 @@ ul.section-lists-text>li span{
 
 p.section-text{
 	margin-top: 20px;
+	padding: 0 50px;
+	text-indent: 2em;
 }
 
 .gray {
