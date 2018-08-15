@@ -1,4 +1,4 @@
-import { Dictionary } from './Dictionary'
+import { Dictionary, HashTable } from './Dictionary'
 
 function createDictionary(items: any): Dictionary {
   const dictionary = new Dictionary()
@@ -8,7 +8,15 @@ function createDictionary(items: any): Dictionary {
   return dictionary  
 }
 
-test('dictionary 基础功能', () => {
+function createHashTable(items: any): HashTable {
+  const hashTable = new HashTable()
+  Object.keys(items).forEach(key => {
+    hashTable.put(key, items[key])
+  })
+  return hashTable  
+}
+
+test('Dictionary 基础功能', () => {
   const dictionary = createDictionary({a: 123, b: 'xx', c: false})
   
   expect(dictionary.has('a')).toBe(true)
@@ -19,4 +27,12 @@ test('dictionary 基础功能', () => {
   dictionary.clear()
   
   expect(dictionary.size()).toBe(0)
+})
+
+test('HashTable 基础功能', () => {
+  const hashTable = createHashTable({a: 123, b: 'xx'})
+  
+  expect(hashTable.get('b')).toBe('xx')
+  hashTable.remove('b')
+  expect(hashTable.get('b')).toBe(undefined)
 })
