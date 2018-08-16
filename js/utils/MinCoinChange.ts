@@ -1,3 +1,4 @@
+// 给出要找零的钱数， 以及可用的硬币面额d1…dn及其数量，找到所需的少的硬币个数。 
 export class MinCoinChange {
   // 可用硬币面额
   private coins: number[]
