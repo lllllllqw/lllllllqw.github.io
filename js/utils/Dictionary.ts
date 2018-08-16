@@ -1,11 +1,7 @@
 import { LinkedList } from "./LinkedList";
 
-class LObject extends Object {
-  [key: string]: any
-}
-
 export class Dictionary {
-  private items: LObject
+  private items: any
   constructor() {
     this.items = {}
   }
