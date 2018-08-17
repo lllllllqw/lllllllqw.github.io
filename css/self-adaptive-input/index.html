@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自适应高度文本输入框</title>
+  <meta name="description" content="文本输入框的高度要随着框内文本所占高度而变化" />
+  <style>
+    .sa-input__wrapper {
+      position: relative;
+      min-height: 60px;
+      width: 300px;
+    }
+
+    .sa-input__placeholder {
+      /* 使文本按原本格式换行 */
+      white-space: pre-wrap;
+      visibility: hidden;
+    }
+
+    .sa-input__textarea {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      /* 去除 textarea 默认属性 */
+      margin: 0;
+      padding: 0;
+      outline: none;
+      resize: none;
+      overflow: hidden;
+    }
+
+    .font-style {
+      /* 长单词换行,避免出现长单词时格式错乱 */
+      word-wrap: break-word;
+      word-break: break-all;
+      /* 统一字体及样式 */
+      box-sizing: border-box;
+      font-family: Helvetica;
+      line-height: 18px;
+      ;
+      font-size: 16px;
+      border-radius: 8px;
+      padding: 30px 4px 4px;
+      border: 1px solid #ccc;
+    }
+
+    .sa-input_button {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      color: #aaa;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h3>1.使用占位容器达到效果</h3>
+    <div class="sa-input__wrapper">
+      <div class="sa-input__placeholder font-style"></div>
+      <textarea class="sa-input__textarea font-style"></textarea>
+      <div class="sa-input_button">&times; 清空内容</div>
+    </div>
+
+    <h3>2.使用 scrollHeight 属性</h3>
+    
+  </div>
+
+  <script>
+    (function () {
+      function initSaInput() {
+        const textarea = document.querySelector('.sa-input__textarea')
+        const placeholder = document.querySelector('.sa-input__placeholder')
+        // 清空内容按钮功能
+        document.querySelector('.sa-input_button').addEventListener('click', function () {
+          textarea.value = ''
+          placeholder.innerHTML = ''
+        })
+        // 输入时替换容器内文本
+        textarea.addEventListener('input', function (e) {
+          // 最后一个换行并不会 pre-wrap 中换行并不生效, 所以增加一个空格
+          placeholder.innerHTML = e.target.value.replace(/\n$/, '\n ')
+        })
+      }
+
+      initSaInput()
+    })()
+  </script>
+</body>
+
+</html>
