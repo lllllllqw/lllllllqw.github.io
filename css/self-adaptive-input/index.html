@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
   <meta charset="UTF-8">
@@ -56,6 +56,17 @@
       color: #aaa;
       cursor: pointer;
     }
+
+    .sa-input__textarea-other {
+      box-sizing: border-box;
+      min-height: 60px;
+      width: 300px;
+      padding: none;
+      border: 1px solid #ccc;
+      outline: none;
+      resize: none;
+      overflow: hidden;
+    }
   </style>
 </head>
 
@@ -69,7 +80,7 @@
     </div>
 
     <h3>2.使用 scrollHeight 属性</h3>
-    
+    <textarea class="sa-input__textarea-other"></textarea>
   </div>
 
   <script>
@@ -79,8 +90,7 @@
         const placeholder = document.querySelector('.sa-input__placeholder')
         // 清空内容按钮功能
         document.querySelector('.sa-input_button').addEventListener('click', function () {
-          textarea.value = ''
-          placeholder.innerHTML = ''
+          placeholder.innerHTML = textarea.value = ''
         })
         // 输入时替换容器内文本
         textarea.addEventListener('input', function (e) {
@@ -90,6 +100,30 @@
       }
 
       initSaInput()
+
+      function initSaInputOther() {
+        const textarea = document.querySelector('.sa-input__textarea-other')
+        
+        let lastLength = -1
+        let lastHeight = -1
+        textarea.addEventListener('input', function (e) {
+          const length = e.target.value.length
+          // 判断字的长度是否减少
+          if(lastLength < length) {
+            textarea.style.height = ''
+          }
+          const height = textarea.scrollHeight
+          // 判断高度有无变化
+          if(height !== lastHeight || !textarea.style.height) {
+            // 设置高度为滚动区域高度 + 边框
+            textarea.style.height = textarea.scrollHeight + 2 + 'px'
+          }
+          lastLength = length
+          lastHeight = height
+        })
+      }
+
+      initSaInputOther()
     })()
   </script>
 </body>
