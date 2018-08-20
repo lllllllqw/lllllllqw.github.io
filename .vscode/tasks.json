@@ -17,32 +17,7 @@
     },
     {
       "type": "npm",
-      "script": "serve",
-      "path": "plugin-test/",
-      "problemMatcher": []
-    },
-    {
-      "type": "npm",
-      "script": "build",
-      "path": "plugin-test/",
-      "problemMatcher": []
-    },
-    {
-      "type": "npm",
-      "script": "dev",
-      "path": "imageLazyLoad/",
-      "problemMatcher": []
-    },
-    {
-      "type": "npm",
-      "script": "build",
-      "path": "imageLazyLoad/",
-      "problemMatcher": []
-    },
-    {
-      "type": "npm",
-      "script": "dev",
-      "path": "IFE/San/",
+      "script": "test",
       "problemMatcher": []
     }
   ]
