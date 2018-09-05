@@ -29,3 +29,38 @@ function isAnagram(s, t) {
 }
 
 // console.log(isAnagram('r-e', 're-')) // true
+
+
+// 传球问题
+const persons = ['A', 'B', 'C', 'D', 'E']
+
+const routes = []
+const N = 5
+const firstPerson = 'A'
+const lastPerson = 'A'
+
+routes.push([firstPerson])
+for (let i = 1; i <= N; i++) {
+  routes.push([])
+  for (let route of routes[i - 1]) {
+    const nowPerson = route[route.length - 1]
+    for (let person of persons) {
+      if(person === nowPerson) {
+        continue
+      } else if (nowPerson === 'A' && person === 'B') {
+        continue
+      } else if (nowPerson === 'B' && person === 'A') {
+        continue
+      } else if (nowPerson === 'C' && person !== 'D') {
+        continue
+      } else if (nowPerson === 'E' && person === 'C') {
+        continue 
+      } else if (i === N && person !== lastPerson) {
+        continue
+      } else {
+        routes[i].push(route + person)
+      }
+    }
+  }
+  console.log(`第${i}次传球后有${routes[i].length}条路径`)
+}
