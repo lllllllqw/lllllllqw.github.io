@@ -6,6 +6,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   import {
     me as fullMsg,
     fullMarkdown
@@ -96,8 +98,15 @@
         })
       }
     },
-    mounted() {
+    async mounted() {
       this.startWriting()
+      const service = axios.create({
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      const res = await service.get('http://9bl.bakayun.cn/API/GetVideoInfo.php?aid=4143031&p=1&type=json')
+      console.log(res)
     }
   }
 
