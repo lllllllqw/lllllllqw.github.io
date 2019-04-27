@@ -75,3 +75,4 @@ export default {
 // console.log(await get())
 // console.log(await deleteById(table[0].id))
 // console.log(await get())
+console.log(1)
