@@ -1,12 +1,14 @@
 import { LinkedList } from "./LinkedList";
 
-export class Dictionary {
-  private items: any
+export class Dictionary<T> {
+  private items: {
+    [key: string]: T
+  }
   constructor() {
     this.items = {}
   }
 
-  set(key: string, value: any) {
+  set(key: string, value: T) {
     this.items[key] = value
   }
   
@@ -35,12 +37,12 @@ export class Dictionary {
     return this.keys().length
   }
 
-  keys(): any[] {
+  keys(): string[] {
     return Object.keys(this.items)
   }
 
   values() {
-    const values: any[] = []
+    const values: T[] = []
     this.keys().forEach(key => {
       values.push(this.items[key])
     })
