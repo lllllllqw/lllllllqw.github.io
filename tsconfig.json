@@ -2,17 +2,23 @@
   "compilerOptions": {
     "allowJs": false,
     "baseUrl": ".",
+    "module": "commonjs",
     "target": "esnext",
     "experimentalDecorators": true,
+    "strict": true,
     "noImplicitAny": true,
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "mock/*": [
+        "mock/*"
       ]
-    },
+    }
   },
   "include": [
-    "./js/**/**/*"
+    "src/**/*",
+    "mock/**/*"
   ],
   "exclude": [
     "node_modules"
